@@ -8,7 +8,7 @@ C++ Module 00 – 42 Abu Dhabi
 
 ---
 
-## 📌 Overview
+## Overview
 
 This repository contains my solutions for **C++ Module 00** from the 42 curriculum.
 

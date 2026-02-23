@@ -37,19 +37,19 @@ Concepts Used:
 
 Class Architecture
 
-Contact
-Stores:
-First Name
-Last Name
-Nickname
-Phone Number
-Darkest Secret
+* Contact
+* Stores:
+* First Name
+* Last Name
+* Nickname
+* Phone Number
+* Darkest Secret
 
 PhoneBook
-Holds up to 8 contacts
-Replaces oldest when full
-Displays formatted table
-Maintains circular ordering
+* Holds up to 8 contacts
+* Replaces oldest when full
+* Displays formatted table
+* Maintains circular ordering
 
 Circular Buffer Design
 When the phonebook is full (8 contacts), new entries overwrite the oldest one.

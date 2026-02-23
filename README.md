@@ -14,13 +14,13 @@ This repository contains my solutions for **C++ Module 00** from the 42 curricul
 
 This module introduces the foundations of:
 
-- Object-Oriented Programming (OOP)
-- Classes & Member Functions
-- Static Members
-- const correctness
-- Initialization
-- Encapsulation
-- C++98 constraints
+1. Object-Oriented Programming (OOP)
+2. Classes & Member Functions
+3. Static Members
+4. const correctness
+5. Initialization
+6. Encapsulation
+7. C++98 constraints
 
 ## Exercise 01 – My Awesome PhoneBook
 
@@ -28,12 +28,12 @@ Objective
 Implement a simple phonebook using OOP principles.
 
 Concepts Used:
-  Class Design
-  Encapsulation
-  Circular Buffer
-  Input Validation
-  const correctness
-  Formatted Output (std::setw)
+  1. Class Design
+  2. Encapsulation
+  3. Circular Buffer
+  4. Input Validation
+  5. const correctness
+  6. Formatted Output (std::setw)
 
 Class Architecture
 

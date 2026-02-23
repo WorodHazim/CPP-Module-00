@@ -22,8 +22,146 @@ This module introduces the foundations of:
 - Encapsulation
 - C++98 constraints
 
-All exercises are compiled using:
+## Exercise 01 – My Awesome PhoneBook
 
-```bash
-c++ -Wall -Wextra -Werror -std=c++98
+Objective
+Implement a simple phonebook using OOP principles.
+
+Concepts Used:
+  Class Design
+  Encapsulation
+  Circular Buffer
+  Input Validation
+  const correctness
+  Formatted Output (std::setw)
+
+Class Architecture
+
+Contact
+Stores:
+First Name
+Last Name
+Nickname
+Phone Number
+Darkest Secret
+
+PhoneBook
+Holds up to 8 contacts
+Replaces oldest when full
+Displays formatted table
+Maintains circular ordering
+
+Circular Buffer Design
+When the phonebook is full (8 contacts), new entries overwrite the oldest one.
+
+Core Logic
+<pre>
+contacts[nextIndex] = newContact;
+nextIndex = (nextIndex + 1) % 8;
+</pre>
+
+Visual Diagram
+<pre>
+Index:   0   1   2   3   4   5   6   7
+         ↓
+After 8 inserts:
+
+[ A ][ B ][ C ][ D ][ E ][ F ][ G ][ H ]
+
+Add new contact → overwrites A
+
+[ X ][ B ][ C ][ D ][ E ][ F ][ G ][ H ]
+         ↑
+     nextIndex moves circularly
+
+</pre>
+
+This ensures:
+Constant memory usage
+O(1) insertion
+Correct ordering
+
+## Exercise 02 – The Job Of Your Dreams
+Objective
+Rebuild Account.cpp using a provided header and output log.
+
+Core Concept: Static vs Non-Static Members
+
+Non-Static (Per Account)
+Each account has:
+<pre>
+int _amount;
+int _nbDeposits;
+int _nbWithdrawals;
+</pre>
+
+
+These belong to each object individually.
+
+Static (Shared Across All Accounts)
+<pre>
+static int _nbAccounts;
+static int _totalAmount;
+static int _totalNbDeposits;
+static int _totalNbWithdrawals;
+</pre>
+
+
+These exist once in memory and are shared globally.
+
+Memory Model Diagram
+<pre>
+Memory Layout
+
+Account #0        Account #1        Account #2
+------------      ------------      ------------
+_amount            _amount           _amount
+_nbDeposits        _nbDeposits       _nbDeposits
+_nbWithdrawals     _nbWithdrawals    _nbWithdrawals
+
+
+Shared Static Memory (Single Instance)
+--------------------------------------
+_nbAccounts
+_totalAmount
+_totalNbDeposits
+_totalNbWithdrawals
+</pre>
+
+Deposit Logic
+<pre>
+_amount += deposit;
+_totalAmount += deposit;
+_nbDeposits++;
+_totalNbDeposits++;
+</pre>
+
+
+Update individual account
+Update global bank stats
+
+Withdrawal Logic
+<pre>
+if (withdrawal > _amount)
+    return false;
+
+_amount -= withdrawal;
+_totalAmount -= withdrawal;
+_nbWithdrawals++;
+_totalNbWithdrawals++;
+</pre>
+
+Timestamp Logging
+Each action prints a formatted timestamp:
+<pre>
+[YYYYMMDD_HHMMSS]
+</pre>
+
+Generated using:
+<pre>
+std::time
+std::localtime
+std::strftime
+</pre>
+
 
